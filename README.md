@@ -23,13 +23,17 @@ The experiment displays numerical digits from 0 to 9 on a 7-segment display usin
 ## **Codes**
 
 
+```asm
 CODE    SEGMENT
-        ASSUME  CS:CODE,DS:CODE,ES:CODE,SS:CODE;
+        ASSUME  CS:CODE,DS:CODE,ES:CODE,SS:CODE
+;
 PPIC_C  EQU     1FH
-PPIA    EQU     19H;
+PPIA    EQU     19H
+;
         ORG     1000H
         MOV     AL,10000000B
-        OUT     PPIC_C,AL;
+        OUT     PPIC_C,AL
+;
 L2:     MOV     SI,OFFSET DATA
 L1:     MOV     AL,BYTE PTR DS:[SI]
         CMP     AL,00H
@@ -38,18 +42,16 @@ L1:     MOV     AL,BYTE PTR DS:[SI]
         CALL    TIMER
         INC     SI
         JMP     L1
-        JE      L2
-        OUT     PPIA,AL
-        CALL    TIMER
-        INC     SI
-        JMP     L1;
-        INT     3;
+;
+        INT     3
+;
 TIMER:  MOV     CX,0FFFFH
 TIMER1: NOP
         NOP
         NOP
         LOOP    TIMER1
-        RET;
+        RET
+;
 DATA:   DB      11111001B
         DB      10000000B
         DB      11000000B
@@ -60,3 +62,4 @@ DATA:   DB      11111001B
         DB      00H
 CODE    ENDS
         END
+```
