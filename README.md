@@ -73,6 +73,7 @@ The following figures show the observed output on the 7-segment display.
 ### **Figure 1: 7-Segment Display Output for Initial Display State**
 
 ![Figure 1: Initial output on 7-segment](output_image_01.png)
+
 This figure shows the observed output of the 7-segment display after running the assembly program using the 8086 microprocessor and 8255A Programmable Peripheral Interface.
 
 ### **Figure 2: 7-Segment Display Output During Sequential Digit Display**
@@ -81,7 +82,7 @@ This figure shows the observed output of the 7-segment display after running the
 
 This figure shows one of the intermediate display states where the 7-segment display changes according to the binary pattern sent through the 8255A interface.
 
----
+
 
 ### **Figure 3: 7-Segment Display Output for Next Digit Pattern**
 
